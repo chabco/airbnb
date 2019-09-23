@@ -1,0 +1,10 @@
+.home .upper-fold {
+    height: 100vh !important;
+    background-image: url('https://files.slack.com/files-pri/T0569RDC6-FNC6WJ7HP/img_20190916_073315.jpg');
+    background-size: cover;
+    margin: 0;
+};
+
+div.home.col.s12 {
+    padding: 0 0 !important;
+}
