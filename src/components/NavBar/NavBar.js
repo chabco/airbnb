@@ -33,7 +33,7 @@ class NavBar extends Component{
     signup = (e)=>{
         document.querySelector('body').className = 'body-modal-show';
         this.setState({
-            showModal: true
+            showModal: SVGComponentTransferFunctionElement,
         })
     }
     closeModal = (e)=>{
@@ -54,11 +54,11 @@ class NavBar extends Component{
                                 <li><Link to="/host/homes">Host a Home</Link></li>
                                 <li><Link to="/host/experience">Host an experience</Link></li>
                                 <li><Link to="/help">Help</Link></li>
-                                <li className="nav-non-link" onClick={this.signup}>
-                                    Sign up
+                                <li onClick={this.signup}>
+                                    <Link to="?">Sign Up</Link>
                                 </li>
-                                <li className="nav-non-link" onClick={this.signup}>
-                                    Log in
+                                <li onClick={this.signup}>
+                                    <Link to="?">Log in</Link>
                                 </li>
                             </ul>
                         </div>
