@@ -42,7 +42,7 @@ class SignUp extends React.Component{
         for(let key in this.state){
             if ((this.state[key] < 1) && (key !== 'msg')){
                 formValid = false;
-                msg = `${key} fields are required.`
+                msg = `${key} field is required.`
                 break;
             }
         }
