@@ -7,6 +7,7 @@ import SignUp from './Signup';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import logoutAction from '../../actions/logoutAction'
+import testThunkAction from '../../actions/thunkTest';
 
 class NavBar extends Component{
 
@@ -16,6 +17,7 @@ class NavBar extends Component{
     }
 
     componentDidMount() {
+        this.props.aThunk();
         this.setState({
             modalContent: <ModalSplash changeModalContent={this.changeModalContent}/>
         })
@@ -45,7 +47,6 @@ class NavBar extends Component{
             showModal: false
         })
     }
-
     buildNavLinks = () => {
         let navLinks = "";
         if (!this.props.auth.token){
@@ -77,12 +78,16 @@ class NavBar extends Component{
     }
 
     render(){
-        console.log(this.state.auth)
+        let navColor = "transparent";
+        if(this.props.location.pathname !== "/") {
+            navColor = "black";
+        }
+        console.log(this.props)
         const navLinks = this.buildNavLinks();
         return(
             <div className="container-fluid nav">
                 <div className="row">
-                    <nav className="transparent">
+                    <nav className={navColor}>
                         <div className="nav-wrapper">
                             <Link to="/" className="left"><img className="logo" alt="" src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"/></Link>
                             {navLinks}
@@ -104,8 +109,9 @@ class NavBar extends Component{
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        logout: logoutAction
-    },dispatch)
+        logout: logoutAction,
+        aThunk: testThunkAction
+    }, dispatch)
 }
 
 function mapStateToProps(state){
