@@ -10,6 +10,11 @@
     margin: 0px;
     text-transform: capitalize;
 }
+
+.base-card img{
+    max-width: 100%;
+}
+
 .base-card .city-name, .base-card .price{
     position: absolute;
     bottom: 25px;
@@ -19,6 +24,7 @@
     padding-left: 24px;
     padding-right: 24px;    
 }
+
 .base-card .price{
     bottom: 0px;   
     font-weight: normal;
