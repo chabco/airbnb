@@ -8,7 +8,7 @@ class BaseCard extends Component {
         return (
             <div className="base-card col s12">
                 <div className="image">
-                    <img src={imagePath} />
+                    <img alt="" src={imagePath} />
                 </div>
                 <div className="city-name">{cityName}</div>
                 <div className="price">${price}/night average</div>
